@@ -7,10 +7,10 @@ class MessagesController < ApplicationController
   def show
   end
   def new
-    @message = Message.new
+    @message = current_user.messages.build
   end
   def create
-    @message = Message.new(mesage_params)
+    @message = current_user.messages.build(mesage_params)
     if @message.save
       redirect_to root_path
       else
