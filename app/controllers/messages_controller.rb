@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
   def show
   end
   def new
-    @message = current_user.messages.build
+    @message = current_user.messages.build(mesage_params)
   end
   def create
     @message = current_user.messages.build(mesage_params)
